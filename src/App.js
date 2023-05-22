@@ -1,4 +1,4 @@
-import DateItem from "./components/DateItem";
+import ExpenseItem from "./components/ExpenseItem";
 
 function App() {
     const dataDateItem = [
@@ -30,22 +30,22 @@ function App() {
     return (
         <div className="App">
             <h2>Let's get started! </h2>
-            <DateItem
+            <ExpenseItem
                 title={dataDateItem[0].title}
                 amount={dataDateItem[0].amount}
                 date={dataDateItem[0].date}
             />
-            <DateItem
+            <ExpenseItem
                 title={dataDateItem[1].title}
                 amount={dataDateItem[1].amount}
                 date={dataDateItem[1].date}
             />
-            <DateItem
+            <ExpenseItem
                 title={dataDateItem[2].title}
                 amount={dataDateItem[2].amount}
                 date={dataDateItem[2].date}
             />
-            <DateItem
+            <ExpenseItem
                 title={dataDateItem[3].title}
                 amount={dataDateItem[3].amount}
                 date={dataDateItem[3].date}
