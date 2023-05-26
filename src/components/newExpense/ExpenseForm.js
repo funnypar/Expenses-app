@@ -32,11 +32,28 @@ const ExpenseForm = () => {
         });
     };
 
+    const submitHandler = (event) => {
+        event.preventDefault();
+        console.log(inputStorage);
+
+        setInputStorage(() => {
+            return {
+                title: "",
+                amount: "",
+                date: "",
+            };
+        });
+    };
+
     return (
-        <form className="new-expense__controls">
+        <form className="new-expense__controls" onSubmit={submitHandler}>
             <div className="new-expense__control">
                 <label>Title</label>
-                <input type="text" onChange={titleChangeHandler} />
+                <input
+                    type="text"
+                    value={inputStorage.title}
+                    onChange={titleChangeHandler}
+                />
             </div>
             <div className="new-expense__control">
                 <label>Amount</label>
@@ -44,6 +61,7 @@ const ExpenseForm = () => {
                     type="number"
                     min="0.01"
                     step="0.01"
+                    value={inputStorage.amount}
                     onChange={amountChangeHandler}
                 />
             </div>
@@ -52,6 +70,7 @@ const ExpenseForm = () => {
                 <input
                     type="date"
                     min="2020-01-01"
+                    value={inputStorage.date}
                     onChange={dateChangeHandler}
                 />
             </div>
