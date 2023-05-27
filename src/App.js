@@ -28,9 +28,14 @@ function App() {
             date: new Date(2023, 5, 12),
         },
     ];
+
+    const saveNewExpenseDataHandler = (newData) => {
+        console.log(newData);
+    };
+
     return (
         <div className="App">
-            <NewExpense />
+            <NewExpense onSaveNewExpenseData={saveNewExpenseDataHandler} />
             <Expenses data={dataExpenseItem} />
         </div>
     );
